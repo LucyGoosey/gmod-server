@@ -27,11 +27,15 @@ update_server() {
 
 # Now the script actually runs update_server ( which we just declared above ) with the id of the application ( 4020 is Garry's Mod ) and the name of the directory we want the server to be hosted from:
 
-update_server 4020 "server_1"
+echo "Updating Gmod..."
+update_server 4020 "server_2"
 
 # Add any additional servers here by repeating the above, but using a different directory name.
-update_server 232330 "server_1/content/css"
-update_server 232250 "server_1/content/tf2"
+echo "Updating CS:S..."
+update_server 232330 "server_2/content/css"
+
+echo "Updating TF2..."
+update_server 232250 "server_2/content/tf2"
 
 # Exit with status code 0 ( which means OK )
 exit 0
