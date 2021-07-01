@@ -3,6 +3,8 @@ server_1/*
 
 server_1/garrysmod/*
 !server_1/garrysmod/cfg/
+!server_1/garrysmod/data/
+!server_1/garrysmod/lua/
 
 server_1/garrysmod/cfg/secrets.cfg
 server_1/garrysmod/cfg/banned*.cfg
