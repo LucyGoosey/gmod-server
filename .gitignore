@@ -7,3 +7,15 @@ server_1/garrysmod/*
 server_1/garrysmod/cfg/secrets.cfg
 server_1/garrysmod/cfg/banned*.cfg
 server_1/garrysmod/cfg/mount.cfg
+
+!server_1/garrysmod/data/
+!server_1/garrysmod/data/lf_playermodel_selector/
+!server_1/garrysmods/data/mapvote/
+
+!server_1/garrysmod/data/ulib/
+server_1/garrysmod/data/ulib/bans.txt
+server_1/garrysmod/data/ulib/users.txt
+
+!server_1/garrysmod/data/ulx/
+server_1/garrysmod/data/ulx_logs/*
+
