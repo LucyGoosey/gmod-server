@@ -17,7 +17,7 @@ update_server() {
 
 	# Read the app id and the directory into variables
 	APP_ID=$1
-	DIR=`realpath "$2" 2>/dev/null || echo "$2"` # resolve to absolute path
+	DIR=$2
 
 	# Create the directory ( if it does not exist already )
 	if [ ! -d "$DIR" ]; then
@@ -32,8 +32,19 @@ update_server() {
 	fi
 
 	if [[ 0 -eq $ANSWER ]]; then
+		# Resolve to absolute path.
+		if [[ 'Cygwin' == `uname -o` ]]; then
+			ABSPATH=`cygpath -aw "$DIR"`
+		else
+			ABSPATH=`realpath "$DIR"`
+		fi
+
+		ANSWER=$?
+	fi
+
+	if [[ 0 -eq $ANSWER ]]; then
 		# Call SteamCMD with the app ID we provided and tell it to install
-		steamcmd +login anonymous +force_install_dir "$DIR" +app_update $APP_ID validate +quit
+		steamcmd +login anonymous +force_install_dir "$ABSPATH" +app_update $APP_ID validate +quit
 		ANSWER=$?
 	fi
 
