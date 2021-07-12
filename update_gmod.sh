@@ -17,7 +17,7 @@ update_server() {
 
 	# Read the app id and the directory into variables
 	APP_ID=$1
-	DIR=`realpath "$2"` # resolve to absolute path
+	DIR=`realpath "$2" 2>/dev/null || echo "$2"` # resolve to absolute path
 
 	# Create the directory ( if it does not exist already )
 	if [ ! -d "$DIR" ]; then
